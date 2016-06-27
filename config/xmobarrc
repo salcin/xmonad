@@ -1,0 +1,10 @@
+Config { font = "xft:Sans-8:bold"
+       , allDesktops = False
+       , bgColor = "#333333"
+       , fgColor = "#cccccc"
+       , lowerOnStart = True
+       , position = Top
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ "
+       }

@@ -1,0 +1,17 @@
+conky.config = {
+        background = false,
+        cpu_avg_samples = 2,
+        net_avg_samples = 2,
+        no_buffers = true,
+        out_to_stderr = false,
+        update_interval = 5.0,
+        uppercase = false,
+        use_spacer = 'left'
+};
+
+
+conky.text =
+[[
+${if_match ${cpu} < 45} ^i($HOME/.xmonad/icons/cpu.xpm)${else} ${if_match ${cpu} > 75} ^i($HOME/.xmonad/icons/cpu_high.xpm)${else} ^i($HOME/.xmonad/icons/cpu_medium.xpm)$endif $endif ${cpu}% ${if_match ${memperc} < 55} ^i($HOME/.xmonad/icons/mem.xpm)${else} ${if_match ${memperc} > 75} ^i($HOME/.xmonad/icons/mem_high.xpm)${else} ^i($HOME/.xmonad/icons/mem_medium.xpm)$endif $endif ${memperc}% ^i($HOME/.xmonad/icons/audio.xpm) ${execi 2 pactl list sinks  | grep front-right: | cut -d "/" -f3 | tr -d " "} ^i($HOME/.xmonad/icons/clock.xpm) ${time %H:%M - %d %a}
+]];
+
